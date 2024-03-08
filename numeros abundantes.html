@@ -1,0 +1,31 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            function EsAbundante(n){
+            {
+                let sumaDivisores = 0;
+                for (let i = 1; i <= n / 2; i++) {
+                if (n % i === 0) {
+                    sumaDivisores += i;
+                }
+            }
+            return sumaDivisores > n;
+        }
+            }
+            function ListarAbundantes(hastaNumero) {
+            document.write("Números abundantes hasta " + hastaNumero + ":<br>");
+            for (let i = 1; i <= hastaNumero; i++) {
+                if (EsAbundante(i)) {
+                    document.write(i + "<br>");
+                }
+            }
+        }
+        let limite = parseInt(prompt('Ingrese un número límite para listar los números abundantes:', ''));
+        ListarAbundantes(limite);
+
+        </script>
+    </body>
+</html>

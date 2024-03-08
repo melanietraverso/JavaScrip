@@ -1,0 +1,66 @@
+
+<html>
+<head>
+</head>
+<body>
+    <script>
+        function ConjugadorDeVerbos(verbo) {
+            
+            let terminacion = verbo.slice(-2);
+
+            
+            function presenteYo(verbo) {
+                
+                return "yo " + verbo;
+            }
+
+            function presenteTu(verbo) {
+                
+                return "tú " + verbo;
+            }
+
+            function presenteElElla(verbo) {
+            
+                return "él/ella " + verbo;
+            }
+
+            function presenteNosotros(verbo) {
+                
+                return "nosotros " + verbo;
+            }
+
+            function presenteVosotros(verbo) {
+                
+                return "vosotros " + verbo;
+            }
+
+            function presenteEllos(verbo) {
+                
+                return "ellos " + verbo;
+            }
+
+            
+            return {
+                presenteYo: presenteYo(verbo),
+                presenteTu: presenteTu(verbo),
+                presenteElElla: presenteElElla(verbo),
+                presenteNosotros: presenteNosotros(verbo),
+                presenteVosotros: presenteVosotros(verbo),
+                presenteEllos: presenteEllos(verbo)
+                
+            };
+        }
+
+        let verbo = prompt('Ingrese un verbo:', '');
+
+        
+        let conjugaciones = ConjugadorDeVerbos(verbo);
+
+        
+        console.log(conjugaciones);
+
+        
+        document.write("<pre>" + JSON.stringify(conjugaciones, null, 2) + "</pre>");
+    </script>
+</body>
+</html>

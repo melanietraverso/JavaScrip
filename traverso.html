@@ -1,0 +1,34 @@
+<html>
+<head>
+
+</head>
+<body>
+    <script>
+        function EsGrito(texto){
+            let contG=0, contE=0;
+            let regex = /^[a-zA-Z]+$/;
+            let Grita = false;
+            for(i = 0; i<texto.lenght;i++){
+                let char = texto.charAt(i);
+                if(char=='!'){
+                    contG++;
+                }
+                else if(regex.test(char)){
+                    contE++;
+                }
+            }
+            if(contG > contE ){
+                grita=true;
+            }
+            return Grita;
+        }
+        let a =prompt('texto','');
+        let esc = "escrito";
+
+        if(EsGrito(a)== true){
+            esc=EsGrito
+        }
+        document.write(esc + "br");
+    </script>
+</body>
+</html>
