@@ -1,65 +1,109 @@
-
 <html>
 <head>
 </head>
 <body>
     <script>
         function ConjugadorDeVerbos(verbo) {
-            
             let terminacion = verbo.slice(-2);
 
-            
-            function presenteYo(verbo) {
-                
-                return "yo " + verbo;
+            function conjugacionPresenteYo(verbo) {
+                let conjugacion = "";
+                if (terminacion == "ar") {
+                    conjugacion = "yo " + verbo.slice(0, -2) + "o";
+                } 
+                 if (terminacion == "er") {
+                    conjugacion = "yo " + verbo.slice(0, -2) + "o";
+                } 
+                if (terminacion == "ir") {
+                    conjugacion = "yo " + verbo.slice(0, -2) + "o";
+                }
+                return conjugacion;
             }
 
-            function presenteTu(verbo) {
-                
-                return "tú " + verbo;
+            function conjugacionPresenteTu(verbo) {
+                let conjugacion = "";
+                if (terminacion == "ar") {
+                    conjugacion = "tú " + verbo.slice(0, -2) + "as";
+                } else if (terminacion === "er") {
+                    conjugacion = "tú " + verbo.slice(0, -2) + "es";
+                } else if (terminacion === "ir") {
+                    conjugacion = "tú " + verbo.slice(0, -2) + "es";
+                }
+                return conjugacion;
             }
 
-            function presenteElElla(verbo) {
-            
-                return "él/ella " + verbo;
+            function conjugacionPresenteElElla(verbo) {
+                let conjugacion = "";
+                if (terminacion =="ar") {
+                    conjugacion = "él/ella " + verbo.slice(0, -2) + "a";
+                } 
+                if (terminacion == "er") {
+                    conjugacion = "él/ella " + verbo.slice(0, -2) + "e";
+                } 
+                 if (terminacion == "ir") {
+                    conjugacion = "él/ella " + verbo.slice(0, -2) + "e";
+                }
+                return conjugacion;
             }
 
-            function presenteNosotros(verbo) {
-                
-                return "nosotros " + verbo;
+            function conjugacionPresenteNosotros(verbo) {
+                let conjugacion = "";
+                if (terminacion == "ar") {
+                    conjugacion = "nosotros " + verbo.slice(0, -2) + "amos";
+                } 
+                 if (terminacion == "er") {
+                    conjugacion = "nosotros " + verbo.slice(0, -2) + "emos";
+                } 
+                 if (terminacion == "ir") {
+                    conjugacion = "nosotros " + verbo.slice(0, -2) + "imos";
+                }
+                return conjugacion;
             }
 
-            function presenteVosotros(verbo) {
-                
-                return "vosotros " + verbo;
+            function conjugacionPresenteVosotros(verbo) {
+                let conjugacion = "";
+                if (terminacion == "ar") {
+                    conjugacion = "vosotros " + verbo.slice(0, -2) + "áis";
+                } 
+                 if (terminacion == "er") {
+                    conjugacion = "vosotros " + verbo.slice(0, -2) + "éis";
+                } 
+                 if (terminacion == "ir") {
+                    conjugacion = "vosotros " + verbo.slice(0, -2) + "ís";
+                }
+                return conjugacion;
             }
 
-            function presenteEllos(verbo) {
-                
-                return "ellos " + verbo;
+            function conjugacionPresenteEllos(verbo) {
+                let conjugacion = "";
+                if (terminacion == "ar") {
+                    conjugacion = "ellos " + verbo.slice(0, -2) + "an";
+                } 
+                 if (terminacion == "er") {
+                    conjugacion = "ellos " + verbo.slice(0, -2) + "en";
+                } 
+                if (terminacion == "ir") {
+                    conjugacion = "ellos " + verbo.slice(0, -2) + "en";
+                }
+                return conjugacion;
             }
 
-            
             return {
-                presenteYo: presenteYo(verbo),
-                presenteTu: presenteTu(verbo),
-                presenteElElla: presenteElElla(verbo),
-                presenteNosotros: presenteNosotros(verbo),
-                presenteVosotros: presenteVosotros(verbo),
-                presenteEllos: presenteEllos(verbo)
-                
+                presenteYo: conjugacionPresenteYo(verbo),
+                presenteTu: conjugacionPresenteTu(verbo),
+                presenteElElla: conjugacionPresenteElElla(verbo),
+                presenteNosotros: conjugacionPresenteNosotros(verbo),
+                presenteVosotros: conjugacionPresenteVosotros(verbo),
+                presenteEllos: conjugacionPresenteEllos(verbo)
             };
         }
 
         let verbo = prompt('Ingrese un verbo:', '');
 
-        
         let conjugaciones = ConjugadorDeVerbos(verbo);
 
-        
         console.log(conjugaciones);
 
-        
         document.write("<pre>" + JSON.stringify(conjugaciones, null, 2) + "</pre>");
     </script>
 </body>
